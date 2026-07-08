@@ -90,7 +90,7 @@ export function ChatPage() {
   }, []);
 
   useEffect(() => {
-    socket = io(apiBaseURL, {
+    socket = io(apiBaseURL || '/', {
       withCredentials: true,
     });
 
