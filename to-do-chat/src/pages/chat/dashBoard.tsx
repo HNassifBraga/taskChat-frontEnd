@@ -10,6 +10,7 @@ import { NavBar } from '../navbar/navbar';
 import styles from './DashBoard.module.css';
 import type { Task, TaskStatus } from '../../interfaces/interfaceTasks';
 import type { UsersInCompany } from '../../interfaces/interfaceUser';
+import { apiBaseURL } from '../../services/api/api';
 
 let socket: Socket;
 
@@ -89,7 +90,7 @@ export function ChatPage() {
   }, []);
 
   useEffect(() => {
-    socket = io('http://localhost:3000', {
+    socket = io(apiBaseURL, {
       withCredentials: true,
     });
 
